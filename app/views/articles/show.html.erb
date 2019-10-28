@@ -6,6 +6,10 @@
   <% end %>
 </p>
 <br>
+<% if @article.image.exists? %>
+  <p><%= image_tag @article.image.url%></p>
+<% end %>
+<br>
 <p><%= @article.body %></p>
 
 <div style="margin-top:20px;">
