@@ -12,11 +12,13 @@
 <br>
 <p><%= @article.body %></p>
 
+<% if logged_in? %>
 <div style="margin-top:20px;">
 <%= link_to "Edit article...", edit_article_path, class: "edit_article" %>
 <br>
 <%= link_to "Delete article..?", article_path(@article),
  method: :delete, data: {confirm: "Really delete the article?"} %>
+<% end %>
 <br>
 <%= render partial: 'comments/form' %>
 <br>

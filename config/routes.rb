@@ -5,5 +5,10 @@ Rails.application.routes.draw do
     resources :attachments
   end
   resources :tags
+  resources :authors
+  resources :author_sessions, only: %i[new create destroy]
+
+  get 'login'  => 'author_sessions#new'
+  get 'logout' => 'author_sessions#destroy'
   root to: 'articles#index'
 end
